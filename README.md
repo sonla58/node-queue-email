@@ -1,11 +1,13 @@
 # A Node.js Mail process queue project.
 
 ## Installation
-`yarn`
+```
+yarn || npm install
+```
 
 Run project:
 ```
-yarn start
+yarn start || npm start
 ```
 
 ## Examples

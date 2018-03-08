@@ -11,6 +11,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan(('dev')));
 app.use(errorHandler());
 
+/**
+ * Routes.
+ */
+app.use(require('./app.routes'));
+
 app.listen(4567, () => {
     console.log('App is listening on port: 4567');
 });

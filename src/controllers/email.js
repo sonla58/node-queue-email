@@ -1,4 +1,5 @@
-const {addSendMail} = require('../queue');
+const sgQueue = require('../queue/sengrid-email');
+const awsQueue = require('../queue/aws-email');
 
 exports.sendMail = (req, res) => {
     const defaultArgs = {
@@ -9,9 +10,9 @@ exports.sendMail = (req, res) => {
     };
 
     const {from, to, subject, content} = Object.assign({}, defaultArgs, req.body);
-    const job = addSendMail({from, to, subject, content});
+    const job = awsQueue.addSendMail({from, to, subject, content});
 
-    res.send({
+    return res.send({
         success: true,
         data: job
     });

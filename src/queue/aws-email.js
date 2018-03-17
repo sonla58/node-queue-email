@@ -1,6 +1,6 @@
 const kue = require('kue');
 const queue = kue.createQueue();
-const EmailServices = require('./services/EmailServices');
+const EmailServices = require('../services/AmzEmailService');
 
 exports.addSendMail = ({from, to, subject, content}) => {
     return queue.create('email', {
